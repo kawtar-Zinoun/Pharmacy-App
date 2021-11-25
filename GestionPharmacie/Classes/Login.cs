@@ -9,11 +9,13 @@ namespace GestionPharmacie.Classes
     class Login
     {
         Connection c1 = new Connection();
-        
-        public bool ToLogin(String email, String password)
+ 
+        public Object ToLogin(String email, String password)
         {
-             if(!String.IsNullOrEmpty(email) && !String.IsNullOrEmpty(password))
-            {
+            String id = null, username =null, useremail = null;
+
+            if (!String.IsNullOrEmpty(email) && !String.IsNullOrEmpty(password))
+             {
                 c1.ToConnect();
                 string query = "select id_user,user_name,user_email,user_password from users WHERE user_email ='" + email + "' AND user_password ='" + password + "'";
                 MySqlDataReader row;
@@ -22,23 +24,24 @@ namespace GestionPharmacie.Classes
                 {
                     while (row.Read())
                     {
-                        String id = row["id_user"].ToString();
-                        String username = row["use_rname"].ToString();
-                        String pass_word = row["user_password"].ToString();
-                        String useremail = row["user_email"].ToString();
+                        id = row["id_user"].ToString();
+                        username = row["user_name"].ToString();
+                        useremail = row["user_email"].ToString();
                     }
-                    return true,
-                   // MessageBox.Show("Data found your name is " + username + " " + lastname + " " + " and your address at " + address);
+
+                    var user = new { id, username, useremail }; // anonymous object to return later
+                    return user;
                 }
                 else
                 {
-                    return false;
-                  //  MessageBox.Show("Data not found", "Information");
+                    var user = new { id, username, useremail }; // anonymous empty object to return later
+                    return user;
                 }
             }
              else
             {
-                return false; // email or password are null
+                var user = new { id, username, useremail }; // anonymous empty object to return later
+                return user;
             }
         }
     }

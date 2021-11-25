@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionPharmacie.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,6 +77,18 @@ namespace GestionPharmacie
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             
+        }
+        public bool LogIn()
+        {
+            if (!String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password))
+            {
+                Login l1 = new Login();
+                Object user = l1.ToLogin(Email, Password);
+                if (user != null)
+                    return true;
+            }
+          
+            return false;
         }
     }
 }
