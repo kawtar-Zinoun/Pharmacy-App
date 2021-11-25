@@ -33,12 +33,12 @@ namespace GestionPharmacie
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.passwordError = new System.Windows.Forms.Label();
+            this.emailError = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.emailError = new System.Windows.Forms.Label();
-            this.passwordError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,7 +58,7 @@ namespace GestionPharmacie
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(233, 70);
+            this.label2.Location = new System.Drawing.Point(237, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 38);
             this.label2.TabIndex = 1;
@@ -79,6 +79,24 @@ namespace GestionPharmacie
             this.panel2.Size = new System.Drawing.Size(546, 595);
             this.panel2.TabIndex = 1;
             // 
+            // passwordError
+            // 
+            this.passwordError.AutoSize = true;
+            this.passwordError.ForeColor = System.Drawing.Color.Red;
+            this.passwordError.Location = new System.Drawing.Point(178, 356);
+            this.passwordError.Name = "passwordError";
+            this.passwordError.Size = new System.Drawing.Size(0, 20);
+            this.passwordError.TabIndex = 6;
+            // 
+            // emailError
+            // 
+            this.emailError.AutoSize = true;
+            this.emailError.ForeColor = System.Drawing.Color.Red;
+            this.emailError.Location = new System.Drawing.Point(178, 228);
+            this.emailError.Name = "emailError";
+            this.emailError.Size = new System.Drawing.Size(0, 20);
+            this.emailError.TabIndex = 5;
+            // 
             // guna2Button1
             // 
             this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -89,6 +107,7 @@ namespace GestionPharmacie
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.DisabledState.Parent = this.guna2Button1;
+            this.guna2Button1.Enabled = false;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(171)))), ((int)(((byte)(37)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
@@ -131,6 +150,7 @@ namespace GestionPharmacie
             this.guna2TextBox2.Size = new System.Drawing.Size(344, 58);
             this.guna2TextBox2.TabIndex = 3;
             this.guna2TextBox2.TextOffset = new System.Drawing.Point(10, 0);
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // guna2TextBox1
             // 
@@ -161,6 +181,7 @@ namespace GestionPharmacie
             this.guna2TextBox1.Size = new System.Drawing.Size(344, 58);
             this.guna2TextBox1.TabIndex = 2;
             this.guna2TextBox1.TextOffset = new System.Drawing.Point(10, 0);
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // panel1
             // 
@@ -171,22 +192,6 @@ namespace GestionPharmacie
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(529, 586);
             this.panel1.TabIndex = 5;
-            // 
-            // emailError
-            // 
-            this.emailError.AutoSize = true;
-            this.emailError.Location = new System.Drawing.Point(140, 239);
-            this.emailError.Name = "emailError";
-            this.emailError.Size = new System.Drawing.Size(0, 20);
-            this.emailError.TabIndex = 5;
-            // 
-            // passwordError
-            // 
-            this.passwordError.AutoSize = true;
-            this.passwordError.Location = new System.Drawing.Point(140, 371);
-            this.passwordError.Name = "passwordError";
-            this.passwordError.Size = new System.Drawing.Size(0, 20);
-            this.passwordError.TabIndex = 6;
             // 
             // Form1
             // 
@@ -210,13 +215,13 @@ namespace GestionPharmacie
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label passwordError;
         private System.Windows.Forms.Label emailError;
+        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        public Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
     }
 }
 
