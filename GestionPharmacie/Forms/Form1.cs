@@ -1,4 +1,5 @@
 ﻿using GestionPharmacie.Classes;
+using GestionPharmacie.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,7 +77,16 @@ namespace GestionPharmacie
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
+            if(LogIn())
+            {
+                Medic_List m1 = new Medic_List();
+                m1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Wrong credentials, Please check your email and password.");
+            }
         }
         public bool LogIn()
         {

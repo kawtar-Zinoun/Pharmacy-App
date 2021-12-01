@@ -34,14 +34,14 @@ namespace GestionPharmacie.Classes
                 }
                 else
                 {
-                    var user = new { id, username, useremail }; // anonymous empty object to return later
-                    return user;
+                  //  var user = new { id, username, useremail }; // anonymous empty object to return later
+                    return null;
                 }
             }
              else
             {
-                var user = new { id, username, useremail }; // anonymous empty object to return later
-                return user;
+               // var user = new { id, username, useremail }; // anonymous empty object to return later
+                return null;
             }
         }
     }

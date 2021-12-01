@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\Login.cs" />
+    <Compile Include="Classes\Medic.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,14 @@
     </Compile>
     <Compile Include="Forms\Medic_List.Designer.cs">
       <DependentUpon>Medic_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacieDataSet.cs">
+      <DependentUpon>pharmacieDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacieDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pharmacieDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +98,17 @@
     </Compile>
     <None Include="app.manifest" />
     <None Include="packages.config" />
+    <None Include="pharmacieDataSet.xsc">
+      <DependentUpon>pharmacieDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacieDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pharmacieDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pharmacieDataSet.xss">
+      <DependentUpon>pharmacieDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
